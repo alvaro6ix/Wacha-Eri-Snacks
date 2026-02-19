@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wacha Eri - Hamburguesas y Mas</title>
+    <meta name="description" content="Los mejores snacks y hamburguesas de Toluca. Hamburguesas, hot dogs, alitas y mas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navegacion principal">
+        <div class="nav-container">
+            <div class="logo">Wacha Eri</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#info">Contacto</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <img src="img/logo.png" alt="Logo Wacha Eri" class="logo-hero">
+            <h1><span class="highlight">Wacha Eri</span></h1>
+            <p>Los mejores snacks y hamburguesas de la ciudad</p>
+            <div class="cta-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> Ver Menu
+                </a>
+                <a href="#info" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i> Mas Info
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal"><i class="fas fa-utensils"></i> Nuestro Menu</h2>
+
+            <div class="menu-categories scroll-reveal sticky-categories">
+                <button class="category-btn active" data-category="hamburguesas">Hamburguesas</button>
+                <button class="category-btn" data-category="hotdogs">Hot Dogs</button>
+                <button class="category-btn" data-category="papas">Papas</button>
+                <button class="category-btn" data-category="alitas">Alitas</button>
+                <button class="category-btn" data-category="sincronizadas">Sincronizadas</button>
+                <button class="category-btn" data-category="nachos">Nachos</button>
+                <button class="category-btn" data-category="pollo">Extras de Pollo</button>
+                <button class="category-btn" data-category="botanear">Botanear</button>
+                <button class="category-btn" data-category="bebidas">Bebidas</button>
+            </div>
+
+            <!-- Hamburguesas -->
+            <div class="category-section active" id="hamburguesas">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Arrachera</h3>
+                                <div class="item-price">$60</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Arrachera">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Arrachera con papas</h3>
+                                <div class="item-price">$72</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Arrachera con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Res</h3>
+                                <div class="item-price">$60</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Res con papas</h3>
+                                <div class="item-price">$72</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Pollo</h3>
+                                <div class="item-price">$60</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Pollo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Pollo con papas</h3>
+                                <div class="item-price">$72</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Pollo con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Res doble</h3>
+                                <div class="item-price">$70</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res Doble">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Res doble con papas</h3>
+                                <div class="item-price">$82</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res Doble con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Hawaiana</h3>
+                                <div class="item-price">$70</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Hawaiana">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Hawaiana con papas</h3>
+                                <div class="item-price">$82</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Hawaiana con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Ranchera</h3>
+                                <div class="item-price">$70</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Ranchera">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Ranchera con papas</h3>
+                                <div class="item-price">$82</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Ranchera con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Mexicana</h3>
+                                <div class="item-price">$70</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Mexicana">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Mexicana con papas</h3>
+                                <div class="item-price">$82</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Mexicana con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Choridoble</h3>
+                                <div class="item-price">$75</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Choridoble">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Choridoble con papas</h3>
+                                <div class="item-price">$85</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Choridoble con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Monstruo</h3>
+                                <div class="item-price">$135</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Monstruo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Monstruo con papas</h3>
+                                <div class="item-price">$140</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Monstruo con papas">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hot Dogs -->
+            <div class="category-section" id="hotdogs">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Sencillo</h3>
+                                <div class="item-price">$25</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Sencillo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Sencillo con papas</h3>
+                                <div class="item-price">$40</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Sencillo con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Ranchero (salchicha de asar)</h3>
+                                <div class="item-price">$35</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Ranchero">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Ranchero con papas</h3>
+                                <div class="item-price">$50</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Ranchero con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Waka waka (con guacamole)</h3>
+                                <div class="item-price">$45</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Waka waka">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Waka waka con papas</h3>
+                                <div class="item-price">$60</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Waka waka con papas">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Papas -->
+            <div class="category-section" id="papas">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Papas Chicas</h3>
+                                <div class="item-price">$35</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/papa.jpg" alt="Papas Chicas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Papas Grandes</h3>
+                                <div class="item-price">$55</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/papa.jpg" alt="Papas Grandes">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alitas -->
+            <div class="category-section" id="alitas">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Orden de alitas (6 pz)</h3>
+                                <div class="item-price">$70</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/alitas.jpg" alt="Orden de Alitas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Orden de alitas con papas</h3>
+                                <div class="item-price">$82</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/alitas.jpg" alt="Orden de Alitas con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Salsas a Elegir</h3>
+                                <div class="sauce-list">BBQ, Bufalo, Habanero, Extra picosa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sincronizadas -->
+            <div class="category-section" id="sincronizadas">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>1 Sincronizada</h3>
+                                <div class="item-price">$40</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/sincronizada.jpg" alt="1 Sincronizada">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>2 Sincronizadas</h3>
+                                <div class="item-price">$65</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/sincronizada.jpg" alt="2 Sincronizadas">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nachos -->
+            <div class="category-section" id="nachos">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Nachos Sencillos</h3>
+                                <div class="item-price">$35</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/nachos.jpg" alt="Nachos Sencillos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Nachos Rancheros (con carne y tocino)</h3>
+                                <div class="item-price">$55</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/nachos.jpg" alt="Nachos Rancheros">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Chorinachos</h3>
+                                <div class="item-price">$55</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/nachos.jpg" alt="Chorinachos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extras de Pollo -->
+            <div class="category-section" id="pollo">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Orden de Nuggets (10 pz)</h3>
+                                <div class="item-price">$50</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/nuggets.jpg" alt="Orden de Nuggets">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Nuggets con papas</h3>
+                                <div class="item-price">$62</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/nuggets.jpg" alt="Nuggets con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Orden de Boneless (10 pz)</h3>
+                                <div class="item-price">$70</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/bonneles.jpg" alt="Orden de Boneless">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Boneless con papas</h3>
+                                <div class="item-price">$82</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/bonneles.jpg" alt="Boneless con papas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Salsas para Boneless</h3>
+                                <div class="sauce-list">BBQ, Bufalo, Habanero, Extra picosa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botanear -->
+            <div class="category-section" id="botanear">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Platanos Machos (Orden chica)</h3>
+                                <div class="item-price">$35</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/platano.webp" alt="Platanos Machos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Dorilocos</h3>
+                                <div class="item-price">$40</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/dorilocos.jpg" alt="Dorilocos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Cueritos Preparados (Vaso chico)</h3>
+                                <div class="item-price">$35</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/cueritos.jpg" alt="Cueritos Preparados">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Chicharron Preparado</h3>
+                                <div class="item-price">$40</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/chicharron.jpeg" alt="Chicharron Preparado">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebidas -->
+            <div class="category-section" id="bebidas">
+                <div class="menu-grid">
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Coca-Cola 600ml</h3>
+                                <div class="item-price">$26</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/coca.jpg" alt="Coca-Cola">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Refrescos de sabores</h3>
+                                <div class="item-price">$25</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/refrescos.avif" alt="Refrescos de sabores">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item scroll-reveal">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Jugos (caja o botella)</h3>
+                                <div class="item-price">$25</div>
+                            </div>
+                            <div class="item-image">
+                                <img src="img/mango.jpg" alt="Jugos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="info" class="info-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Informacion del Lugar</h2>
+            <div class="info-grid">
+                <div class="info-card scroll-reveal">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicacion</h3>
+                    <p>
+                        Jilotepec 200<br>
+                        Sector Popular<br>
+                        50040 Toluca de Lerdo, Mex.<br>
+                        <a href="https://www.google.com/maps/place/Jilotepec+200,+Sector+Popular,+50040+Toluca+de+Lerdo,+M%C3%A9x./@19.2929813,-99.6639807,21z/data=!4m6!3m5!1s0x85cd89c69229115b:0x998cd401349765f9!8m2!3d19.2929675!4d-99.6639067!16s%2Fg%2F11nnszmth0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
+                        </a>
+                    </p>
+                </div>
+
+                <div class="info-card scroll-reveal">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horario</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        <li><i class="fas fa-clock" style="color:var(--color-primary);"></i> Lunes a Domingo: 5:00 PM - 11:00 PM</li>
+                        <li><i class="fas fa-check-circle" style="color:#43a047;"></i> <em>Abierto todos los dias</em></li>
+                    </ul>
+                </div>
+
+                <div class="info-card scroll-reveal">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Contacto</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        <li><i class="fas fa-phone" style="color:var(--color-primary);"></i> Telefono: <a href="tel:7225443026">722 544 3026</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-card scroll-reveal">
+                    <div class="info-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Especialidades</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        <li><i class="fas fa-leaf" style="color:#43a047;"></i> Ingredientes frescos diarios</li>
+                        <li><i class="fas fa-users" style="color:#5b9bd5;"></i> Ambiente familiar</li>
+                        <li><i class="fas fa-dollar-sign" style="color:#43a047;"></i> Precios accesibles</li>
+                    </ul>
+                </div>
+
+                <div class="info-card scroll-reveal">
+                    <div class="info-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Formas de Pago</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        <li><i class="fas fa-money-bill-wave" style="color:#43a047;"></i> Efectivo</li>
+                        <li><i class="fas fa-university" style="color:#5b9bd5;"></i> Transferencias bancarias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-hamburger"></i> Wacha Eri</h3>
+                    <p>Los mejores snacks y hamburguesas de Toluca. Desde 2022 deleitando paladares con ingredientes frescos y sabores unicos.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Enlaces Rapidos</h3>
+                    <p><a href="#inicio">Inicio</a></p>
+                    <p><a href="#menu">Menu Completo</a></p>
+                    <p><a href="#contacto">Contacto</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Categorias</h3>
+                    <p><a href="#" data-category="hamburguesas">Hamburguesas</a></p>
+                    <p><a href="#" data-category="hotdogs">Hot Dogs</a></p>
+                    <p><a href="#" data-category="papas">Papas</a></p>
+                    <p><a href="#" data-category="alitas">Alitas</a></p>
+                    <p><a href="#" data-category="bebidas">Bebidas</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto Directo</h3>
+                    <p><i class="fas fa-phone"></i> <a href="tel:7225443026">722 544 3026</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Toluca, Mexico</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wacha Eri | Hecho con amor para los amantes de la buena comida</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

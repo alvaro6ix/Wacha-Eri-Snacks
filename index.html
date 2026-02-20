@@ -71,8 +71,9 @@
     <!-- Precargar imagen hero (LCP - Largest Contentful Paint) -->
     <link rel="preload" href="img/logo.webp" as="image" fetchpriority="high">
 
-    <!-- Fuentes optimizadas con display=swap (evita FOIT) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Fuentes NO bloqueantes — mismo patrón que Font Awesome (mejora FCP/LCP) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
     <!-- Font Awesome con defer via JS para no bloquear render -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">

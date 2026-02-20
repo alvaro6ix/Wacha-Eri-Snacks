@@ -115,8 +115,11 @@ categoryBtns.forEach(btn => {
         const targetSection = document.getElementById(category);
         if (targetSection) {
             targetSection.classList.add('active');
-            // Re-escaneo de posiciones porque al cambiar de categoría el alto de la página cambia
-            cacheSectionPositions(); 
+            // Diferimos la lectura de posiciones al siguiente frame para evitar forced reflow
+            // (leer offsetTop/offsetHeight justo después de classList.add causa reflow)
+            requestAnimationFrame(() => {
+                requestAnimationFrame(cacheSectionPositions);
+            });
         }
     });
 });

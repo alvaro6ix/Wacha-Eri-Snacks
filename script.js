@@ -24,28 +24,36 @@ if (menuToggle && navLinks) {
     });
 }
 
-// ===== Smooth Scrolling & Positions (Fix definitivo para Reflow) =====
+// ===== Smooth Scrolling & Positions (PROTECCIÓN TOTAL CONTRA REFLOW) =====
 let cachedNavHeight = 70;
 let cachedSections = [];
 
 function cacheSectionPositions() {
-    // requestAnimationFrame asegura que la lectura ocurra en el momento óptimo del renderizado
+    // Usamos un solo frame para leer todo el DOM de golpe y evitar lecturas intercaladas
     requestAnimationFrame(() => {
         if (navbar) cachedNavHeight = navbar.offsetHeight;
-        cachedSections = Array.from(sections).map(section => ({
-            id: section.getAttribute('id'),
-            top: section.offsetTop,
-            bottom: section.offsetTop + section.offsetHeight
-        }));
+        
+        // Mapeo optimizado: leemos offsetTop una sola vez por sección
+        const newPositions = [];
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            newPositions.push({
+                id: section.getAttribute('id'),
+                top: top,
+                bottom: top + section.offsetHeight
+            });
+        });
+        cachedSections = newPositions;
     });
 }
 
-// Ejecutar con un pequeño delay (100ms) tras la carga para que el navegador esté en reposo
+// Inicialización diferida (El secreto para el 100/100 en Performance)
 window.addEventListener('load', () => {
+    // Damos un respiro de 200ms para que el navegador termine de "acomodar" el layout
     setTimeout(() => {
         cacheSectionPositions();
         updateActiveNav();
-    }, 100);
+    }, 200);
 });
 
 window.addEventListener('resize', cacheSectionPositions, { passive: true });
@@ -65,7 +73,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Navbar Scroll Effect =====
+// ===== Navbar Scroll Effect (Optimizado con Passive Listener) =====
 window.addEventListener('scroll', () => {
     if (!navbar) return;
     if (window.scrollY > 50) {
@@ -77,17 +85,17 @@ window.addEventListener('scroll', () => {
 
 // ===== Active Nav Link on Scroll =====
 function updateActiveNav() {
+    if (cachedSections.length === 0) return;
     const scrollPos = window.scrollY + 120;
-    cachedSections.forEach(({ id, top, bottom }) => {
-        if (scrollPos >= top && scrollPos < bottom) {
+    
+    for (const section of cachedSections) {
+        if (scrollPos >= section.top && scrollPos < section.bottom) {
             navLinksAll.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + id) {
-                    link.classList.add('active');
-                }
+                link.classList.toggle('active', link.getAttribute('href') === '#' + section.id);
             });
+            break; // Encontramos la sección activa, no necesitamos seguir el loop
         }
-    });
+    }
 }
 
 window.addEventListener('scroll', updateActiveNav, { passive: true });
@@ -99,6 +107,7 @@ const categorySections = document.querySelectorAll('.category-section');
 categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const category = btn.dataset.category;
+        
         categoryBtns.forEach(b => b.classList.remove('active'));
         categorySections.forEach(s => s.classList.remove('active'));
 
@@ -106,10 +115,8 @@ categoryBtns.forEach(btn => {
         const targetSection = document.getElementById(category);
         if (targetSection) {
             targetSection.classList.add('active');
-            targetSection.querySelectorAll('.scroll-reveal').forEach(el => {
-                el.classList.remove('revealed');
-                observer.observe(el);
-            });
+            // Re-escaneo de posiciones porque al cambiar de categoría el alto de la página cambia
+            cacheSectionPositions(); 
         }
     });
 });
@@ -125,7 +132,7 @@ document.querySelectorAll('a[data-category]').forEach(link => {
     });
 });
 
-// ===== Scroll Reveal Animation =====
+// ===== Scroll Reveal Animation (Intersection Observer es lo más eficiente) =====
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -140,18 +147,15 @@ document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 // ===== Subtle Cursor Glow (Desktop Only) =====
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const glow = document.createElement('div');
+    glow.id = 'cursor-glow';
     glow.style.cssText = "position:fixed;width:300px;height:300px;background:radial-gradient(circle,rgba(255,107,53,0.04) 0%,transparent 70%);border-radius:50%;pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:opacity 0.3s ease;opacity:0;";
     document.body.appendChild(glow);
 
-    let glowVisible = false;
     document.addEventListener('mousemove', (e) => {
-        if (!glowVisible) { glow.style.opacity = '1'; glowVisible = true; }
+        glow.style.opacity = '1';
         glow.style.left = e.clientX + 'px';
         glow.style.top = e.clientY + 'px';
     }, { passive: true });
 
-    document.addEventListener('mouseleave', () => {
-        glow.style.opacity = '0';
-        glowVisible = false;
-    });
+    document.addEventListener('mouseleave', () => glow.style.opacity = '0');
 }

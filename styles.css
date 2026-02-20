@@ -186,7 +186,7 @@ body {
 
 .btn-primary {
     background: var(--color-primary);
-    color: #fff;
+    color: #1a0500;
     box-shadow: 0 8px 30px rgba(255, 107, 53, 0.25)
 }
 
@@ -359,6 +359,12 @@ body {
 .footer-section a {
     color: var(--color-text-muted);
     text-decoration: none
+}
+
+.footer-section a[href^="tel"],
+.footer-section a[href*="google"] {
+    color: var(--color-primary);
+    text-decoration: underline
 }
 
 .footer-bottom {
@@ -551,7 +557,7 @@ body {
 
 .about-text a {
     color: var(--color-primary, #ff6b35);
-    text-decoration: none
+    text-decoration: underline
 }
 
 .about-text strong {
@@ -622,7 +628,7 @@ body {
 
 .faq-answer a {
     color: var(--color-primary, #ff6b35);
-    text-decoration: none
+    text-decoration: underline
 }
 
 address {

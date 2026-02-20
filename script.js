@@ -1,6 +1,9 @@
-// ===== Mobile Menu Toggle =====
+// ===== Selectors globales (declarados una sola vez al inicio) =====
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
+const navbar = document.querySelector('.navbar');
+
+// ===== Mobile Menu Toggle =====
 
 menuToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('active');
@@ -30,13 +33,18 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ===== Smooth Scrolling =====
+// navHeight se cachea aquí → no se lee en cada click ni en scroll
+let cachedNavHeight = navbar.offsetHeight;
+window.addEventListener('resize', () => {
+    cachedNavHeight = navbar.offsetHeight;
+}, { passive: true });
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const navHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - cachedNavHeight - 16;
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -47,7 +55,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ===== Navbar Scroll Effect =====
 let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
@@ -65,15 +72,26 @@ window.addEventListener('scroll', () => {
 const sections = document.querySelectorAll('section[id]');
 const navLinksAll = document.querySelectorAll('.nav-links a');
 
+// Caché de posiciones → se leen UNA vez (no en cada evento scroll)
+// Esto elimina el "forced reflow" que reportaba PageSpeed
+let cachedSections = [];
+
+function cacheSectionPositions() {
+    cachedSections = Array.from(sections).map(section => ({
+        id: section.getAttribute('id'),
+        top: section.offsetTop,
+        bottom: section.offsetTop + section.offsetHeight
+    }));
+}
+
+cacheSectionPositions();
+// Actualizar caché solo en resize (evento infrecuente, no cada frame)
+window.addEventListener('resize', cacheSectionPositions, { passive: true });
+
 function updateActiveNav() {
     const scrollPos = window.scrollY + 120;
-
-    sections.forEach(section => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-
-        if (scrollPos >= top && scrollPos < top + height) {
+    cachedSections.forEach(({ id, top, bottom }) => {
+        if (scrollPos >= top && scrollPos < bottom) {
             navLinksAll.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === '#' + id) {

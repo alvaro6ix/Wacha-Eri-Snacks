@@ -76,8 +76,8 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=optional" rel="stylesheet"></noscript>
 
     <!-- Font Awesome con defer via JS para no bloquear render -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -493,12 +493,13 @@
     <section id="inicio" class="hero" aria-label="Sección de inicio Wacha Eri">
         <div class="hero-content">
             <!-- fetchpriority="high" mejora LCP (Core Web Vitals) -->
-            <img src="img/logo.webp"
-                 alt="Logo oficial de Wacha Eri, local de hamburguesas y antojitos en Toluca"
-                 class="logo-hero"
-                 fetchpriority="high"
-                 width="200"
-                 height="200">
+            <img src="img/logo.webp" 
+     alt="Logo oficial de Wacha Eri, local de hamburguesas y antojitos en Toluca" 
+     class="logo-hero" 
+     fetchpriority="high" 
+     decoding="async" 
+     width="200" 
+     height="200">
             <!-- H1 optimizado: marca + keyword principal + ubicación -->
             <h1><span class="highlight">Wacha Eri</span></h1>
             <!-- Subtítulo con keywords secundarias -->
@@ -1089,7 +1090,7 @@
                                 <div class="item-price">$25</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/refrescos.avif" alt="Refrescos de sabores variados" loading="lazy" decoding="async" width="56" height="56">
+                                <img src="img/jarrito.webp" alt="Refrescos de sabores variados" loading="lazy" decoding="async" width="56" height="56">
                             </div>
                         </div>
                     </div>

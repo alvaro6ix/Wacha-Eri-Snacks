@@ -947,3 +947,31 @@ body::before {
     outline-offset: 2px;
     border-radius: 4px;
 }
+/* ============================================================
+   CORRECCIÓN DE ACCESIBILIDAD PARA PAGESPEED (TAP TARGETS)
+============================================================ */
+@media (max-width: 768px) {
+    .category-btn {
+        min-height: 48px; /* Altura mínima exigida por Google */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .social-links a {
+        min-width: 48px !important;
+        min-height: 48px !important;
+    }
+    
+    .footer-section p a,
+    .footer-section p {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+    
+    .btn {
+        min-height: 48px; 
+    }
+}

@@ -1,0 +1,31 @@
+# ============================================================
+# robots.txt – Wacha Eri
+# https://wacha-eri.vercel.app/robots.txt
+# ============================================================
+
+# Permitir todos los crawlers principales
+User-agent: *
+Allow: /
+
+# Bloquear rutas que no aportan valor SEO (Vercel internals)
+Disallow: /_vercel/
+Disallow: /api/
+
+# Crawlers de IA (respetar o no – por defecto los dejamos pasar para GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Sitemap
+Sitemap: https://wacha-eri.vercel.app/sitemap.xml

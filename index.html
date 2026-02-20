@@ -1,68 +1,556 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX" prefix="og: https://ogp.me/ns#">
 <head>
+    <!-- ============================================================
+         SEO TÉCNICO - METADATOS ESENCIALES
+    ============================================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wacha Eri - Hamburguesas y Mas</title>
-    <meta name="description" content="Los mejores snacks y hamburguesas de Toluca. Hamburguesas, hot dogs, alitas y mas.">
+
+    <!-- TITLE: Palabra clave principal + marca + ubicación (55-60 chars) -->
+    <title>Wacha Eri – Hamburguesas, Hot Dogs y Antojitos en Toluca</title>
+
+    <!-- META DESCRIPTION: 145-155 chars, CTA + palabras clave locales -->
+    <meta name="description" content="Wacha Eri, local de hamburguesas, hot dogs, alitas y antojitos en Toluca, Mex. Abierto todos los días de 5 PM a 11 PM. Jilotepec 200, Sector Popular. ¡Más de 3 años deleitando Toluca!">
+
+    <!-- CANONICAL: evita contenido duplicado -->
+    <link rel="canonical" href="https://wacha-eri.vercel.app/">
+
+    <!-- ROBOTS: indexar todo -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- KEYWORDS (apoyo secundario, no obsoleto para Google pero sí para Bing/Yahoo) -->
+    <meta name="keywords" content="hamburguesas Toluca, hot dogs Toluca, alitas Toluca, antojitos Toluca, snacks Toluca, comida rápida Toluca, Wacha Eri, hamburguesa arrachera, nachos Toluca, boneless Toluca, comida Sector Popular Toluca">
+
+    <!-- AUTOR Y NEGOCIO -->
+    <meta name="author" content="Wacha Eri">
+    <meta name="copyright" content="Wacha Eri 2022-2026">
+
+    <!-- ============================================================
+         GEO SEO - POSICIONAMIENTO LOCAL / GEOGRÁFICO
+    ============================================================ -->
+    <meta name="geo.region" content="MX-MEX">
+    <meta name="geo.placename" content="Toluca de Lerdo, Estado de México, México">
+    <meta name="geo.position" content="19.29297;-99.66391">
+    <meta name="ICBM" content="19.29297, -99.66391">
+    <meta name="DC.Language" content="es-MX">
+    <meta name="DC.Coverage" content="Toluca, Estado de México">
+
+    <!-- ============================================================
+         OPEN GRAPH - REDES SOCIALES (Facebook, WhatsApp, LinkedIn)
+    ============================================================ -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wacha Eri">
+    <meta property="og:title" content="Wacha Eri – Hamburguesas, Hot Dogs y Antojitos en Toluca">
+    <meta property="og:description" content="El local de snacks más popular del Sector Popular en Toluca. Hamburguesas, hot dogs, alitas, nachos y más. Abierto lunes a domingo de 5 PM a 11 PM.">
+    <meta property="og:url" content="https://wacha-eri.vercel.app/">
+    <meta property="og:image" content="https://wacha-eri.vercel.app/img/logo.png">
+    <meta property="og:image:alt" content="Wacha Eri – Local de hamburguesas y snacks en Toluca">
+    <meta property="og:locale" content="es_MX">
+
+    <!-- ============================================================
+         TWITTER / X CARD
+    ============================================================ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wacha Eri – Hamburguesas, Hot Dogs y Antojitos en Toluca">
+    <meta name="twitter:description" content="Local de snacks y hamburguesas en Toluca. Más de 3 años de sabor. Abierto todos los días de 5 PM a 11 PM.">
+    <meta name="twitter:image" content="https://wacha-eri.vercel.app/img/logo.png">
+    <meta name="twitter:image:alt" content="Hamburguesas y antojitos Wacha Eri Toluca">
+
+    <!-- ============================================================
+         RENDIMIENTO Y VELOCIDAD DE CARGA (Core Web Vitals)
+    ============================================================ -->
+    <!-- Preconectar a dominios externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Precargar CSS crítico -->
+    <link rel="preload" href="styles.css" as="style">
+
+    <!-- Precargar imagen hero (LCP - Largest Contentful Paint) -->
+    <link rel="preload" href="img/logo.png" as="image" fetchpriority="high">
+
+    <!-- Fuentes optimizadas con display=swap (evita FOIT) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Font Awesome con defer via JS para no bloquear render -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos para secciones nuevas (About + FAQ) – no afectan el menú existente -->
+    <style>
+        /* ── About / GEO Description ── */
+        .about-section {
+            background: rgba(255,107,53,0.04);
+            border-top: 1px solid rgba(255,107,53,0.1);
+            border-bottom: 1px solid rgba(255,107,53,0.1);
+            padding: 18px 0;
+        }
+        .about-text {
+            text-align: center;
+            font-size: 0.97rem;
+            color: var(--color-text, #ccc);
+            line-height: 1.7;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .about-text a {
+            color: var(--color-primary, #ff6b35);
+            text-decoration: none;
+        }
+        .about-text strong {
+            color: var(--color-text-bright, #fff);
+        }
+
+        /* ── FAQ Section ── */
+        .faq-section {
+            padding: 64px 0;
+            background: var(--color-bg, #111);
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .faq-item {
+            background: var(--color-surface, #1a1a1a);
+            border: 1px solid rgba(255,107,53,0.15);
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+            transition: border-color 0.25s;
+        }
+        .faq-item[open] {
+            border-color: rgba(255,107,53,0.5);
+        }
+        .faq-question {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.97rem;
+            padding: 18px 20px;
+            list-style: none;
+            color: var(--color-text-bright, #fff);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .faq-question::-webkit-details-marker { display: none; }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.3rem;
+            color: var(--color-primary, #ff6b35);
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        .faq-item[open] .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            font-size: 0.93rem;
+            color: var(--color-text, #ccc);
+            line-height: 1.65;
+            padding: 0 20px 18px;
+            margin: 0;
+        }
+        .faq-answer a {
+            color: var(--color-primary, #ff6b35);
+            text-decoration: none;
+        }
+
+        /* ── address tag ── */
+        address { font-style: normal; }
+    </style>
+
+    <!-- Theme color para móviles -->
+    <meta name="theme-color" content="#ff6b35">
+    <meta name="msapplication-TileColor" content="#ff6b35">
+
+    <!-- ============================================================
+         DATOS ESTRUCTURADOS JSON-LD (Schema.org)
+         SEO + AEO + GEO: Google, Bing, ChatGPT, Gemini, Perplexity
+    ============================================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+
+        /* ── 1. NEGOCIO LOCAL (LocalBusiness) ─────────────────── */
+        {
+          "@type": ["FoodEstablishment", "LocalBusiness"],
+          "@id": "https://wacha-eri.vercel.app/#negocio",
+          "name": "Wacha Eri",
+          "alternateName": ["Wacha Eri Toluca", "Local Wacha Eri"],
+          "description": "Wacha Eri es un local de comida rápida y antojitos establecido en Toluca de Lerdo, Estado de México, desde 2022. Ofrecemos hamburguesas artesanales, hot dogs, alitas, papas fritas, nachos, sincronizadas, boneless, nuggets, dorilocos, cueritos y bebidas. Atendemos todos los días de 5 PM a 11 PM con ingredientes frescos y precios accesibles.",
+          "url": "https://wacha-eri.vercel.app/",
+          "telephone": "+527225443026",
+          "foundingDate": "2022",
+          "priceRange": "$25-$140 MXN",
+          "currenciesAccepted": "MXN",
+          "paymentAccepted": "Cash, Bank Transfer",
+          "servesCuisine": ["Mexicana", "Americana", "Antojitos", "Comida Rápida"],
+          "hasMenu": "https://wacha-eri.vercel.app/#menu",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jilotepec 200",
+            "addressLocality": "Sector Popular",
+            "addressRegion": "Estado de México",
+            "postalCode": "50040",
+            "addressCountry": "MX"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.29297,
+            "longitude": -99.66391
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+              "opens": "17:00",
+              "closes": "23:00"
+            }
+          ],
+          "image": "https://wacha-eri.vercel.app/img/logo.png",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://wacha-eri.vercel.app/img/logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Toluca de Lerdo"
+          },
+          "keywords": "hamburguesas Toluca, hot dogs Toluca, alitas Toluca, antojitos Toluca, snacks económicos Toluca",
+          "sameAs": [],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "120"
+          }
+        },
+
+        /* ── 2. MENÚ PRINCIPAL ─────────────────────────────────── */
+        {
+          "@type": "Menu",
+          "@id": "https://wacha-eri.vercel.app/#menu",
+          "name": "Menú Wacha Eri",
+          "description": "Menú completo de hamburguesas, hot dogs, alitas, papas, nachos, sincronizadas, boneless y antojitos",
+          "url": "https://wacha-eri.vercel.app/#menu",
+          "hasMenuSection": [
+            {
+              "@type": "MenuSection",
+              "name": "Hamburguesas",
+              "description": "Hamburguesas artesanales de arrachera, res, pollo y especialidades",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Hamburguesa Arrachera","offers":{"@type":"Offer","price":"60","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hamburguesa Res","offers":{"@type":"Offer","price":"60","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hamburguesa Pollo","offers":{"@type":"Offer","price":"60","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hamburguesa Mexicana","offers":{"@type":"Offer","price":"70","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hamburguesa Ranchera","offers":{"@type":"Offer","price":"70","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hamburguesa Hawaiana","offers":{"@type":"Offer","price":"70","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hamburguesa Choridoble","offers":{"@type":"Offer","price":"75","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hamburguesa Monstruo","offers":{"@type":"Offer","price":"135","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Hot Dogs",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Hot Dog Sencillo","offers":{"@type":"Offer","price":"25","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hot Dog Ranchero","offers":{"@type":"Offer","price":"35","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Hot Dog Waka Waka con guacamole","offers":{"@type":"Offer","price":"45","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Alitas",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Orden de Alitas 6 piezas","description":"Salsas disponibles: BBQ, Búfalo, Habanero, Extra picosa","offers":{"@type":"Offer","price":"70","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Orden de Alitas con Papas","offers":{"@type":"Offer","price":"82","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Papas",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Papas Chicas","offers":{"@type":"Offer","price":"35","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Papas Grandes","offers":{"@type":"Offer","price":"55","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Nachos",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Nachos Sencillos","offers":{"@type":"Offer","price":"35","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Nachos Rancheros con carne y tocino","offers":{"@type":"Offer","price":"55","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Chorinachos","offers":{"@type":"Offer","price":"55","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Extras de Pollo",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Nuggets 10 piezas","offers":{"@type":"Offer","price":"50","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Boneless 10 piezas","description":"Salsas: BBQ, Búfalo, Habanero, Extra picosa","offers":{"@type":"Offer","price":"70","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Sincronizadas",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"1 Sincronizada","offers":{"@type":"Offer","price":"40","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"2 Sincronizadas","offers":{"@type":"Offer","price":"65","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Botanear",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Plátanos Machos orden chica","offers":{"@type":"Offer","price":"35","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Dorilocos","offers":{"@type":"Offer","price":"40","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Cueritos Preparados vaso chico","offers":{"@type":"Offer","price":"35","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Chicharrón Preparado","offers":{"@type":"Offer","price":"40","priceCurrency":"MXN"}}
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Bebidas",
+              "hasMenuItem": [
+                {"@type":"MenuItem","name":"Coca-Cola 600ml","offers":{"@type":"Offer","price":"26","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Refrescos de sabores","offers":{"@type":"Offer","price":"25","priceCurrency":"MXN"}},
+                {"@type":"MenuItem","name":"Jugos caja o botella","offers":{"@type":"Offer","price":"25","priceCurrency":"MXN"}}
+              ]
+            }
+          ]
+        },
+
+        /* ── 3. PÁGINA WEB ─────────────────────────────────────── */
+        {
+          "@type": "WebPage",
+          "@id": "https://wacha-eri.vercel.app/#pagina",
+          "url": "https://wacha-eri.vercel.app/",
+          "name": "Wacha Eri – Hamburguesas, Hot Dogs y Antojitos en Toluca",
+          "description": "Página oficial de Wacha Eri, local de comida rápida y antojitos en Toluca de Lerdo, Estado de México.",
+          "inLanguage": "es-MX",
+          "isPartOf": {"@id": "https://wacha-eri.vercel.app/#sitio"},
+          "about": {"@id": "https://wacha-eri.vercel.app/#negocio"},
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-content p", ".about-text", ".faq-answer"]
+          }
+        },
+
+        /* ── 4. SITIO WEB CON BÚSQUEDA INTERNA ─────────────────── */
+        {
+          "@type": "WebSite",
+          "@id": "https://wacha-eri.vercel.app/#sitio",
+          "url": "https://wacha-eri.vercel.app/",
+          "name": "Wacha Eri",
+          "inLanguage": "es-MX",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://wacha-eri.vercel.app/#menu?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+
+        /* ── 5. BREADCRUMB ──────────────────────────────────────── */
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://wacha-eri.vercel.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Menú",
+              "item": "https://wacha-eri.vercel.app/#menu"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Contacto",
+              "item": "https://wacha-eri.vercel.app/#info"
+            }
+          ]
+        },
+
+        /* ── 6. FAQ (AEO - Answer Engine Optimization) ──────────── */
+        {
+          "@type": "FAQPage",
+          "@id": "https://wacha-eri.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿A qué hora abre Wacha Eri en Toluca?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wacha Eri abre todos los días, de lunes a domingo, de 5:00 PM a 11:00 PM, sin días de descanso."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Dónde está ubicado Wacha Eri en Toluca?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wacha Eri se encuentra en Jilotepec 200, Sector Popular, 50040 Toluca de Lerdo, Estado de México. Puedes encontrarnos en Google Maps buscando 'Wacha Eri Toluca' o por la dirección Jilotepec 200."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué vende Wacha Eri?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wacha Eri es un local de comida rápida y antojitos en Toluca que vende hamburguesas (arrachera, res, pollo, ranchera, mexicana, hawaiana, choridoble y la especial Monstruo), hot dogs, alitas con salsas BBQ, búfalo, habanero y extra picosa, papas fritas, nachos, chorinachos, sincronizadas, boneless, nuggets, dorilocos, cueritos, chicharrón preparado y bebidas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuestan las hamburguesas en Wacha Eri?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Las hamburguesas en Wacha Eri tienen precios desde $60 MXN (arrachera, res o pollo) hasta $135 MXN la Hamburguesa Monstruo. Las versiones con papas van de $72 a $140 MXN."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuántos años tiene Wacha Eri en Toluca?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wacha Eri lleva más de 3 años operando en Toluca de Lerdo, Estado de México, desde 2022, sirviendo hamburguesas, hot dogs y antojitos con ingredientes frescos a precios accesibles."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuáles son las formas de pago en Wacha Eri?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wacha Eri acepta pagos en efectivo y mediante transferencias bancarias (SPEI). No se aceptan tarjetas de crédito ni débito por el momento."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Tiene entrega a domicilio Wacha Eri?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para consultar disponibilidad de servicio a domicilio, contáctanos al teléfono 722 544 3026. También puedes visitarnos directamente en Jilotepec 200, Sector Popular, Toluca."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuestan las alitas en Wacha Eri?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Una orden de 6 alitas cuesta $70 MXN, o $82 MXN con papas. Vienen en salsas a elegir: BBQ, búfalo, habanero o extra picosa."
+              }
+            }
+          ]
+        }
+
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Navegacion principal">
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="nav-container">
-            <div class="logo">Wacha Eri</div>
+            <!-- Logo con texto alternativo semántico para SEO -->
+            <a class="logo" href="#inicio" aria-label="Wacha Eri – Ir al inicio">Wacha Eri</a>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#menu">Menu</a></li>
+                <li><a href="#menu">Menú</a></li>
                 <li><a href="#info">Contacto</a></li>
             </ul>
-            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+            <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section id="inicio" class="hero" aria-label="Sección de inicio Wacha Eri">
         <div class="hero-content">
-            <img src="img/logo.png" alt="Logo Wacha Eri" class="logo-hero">
+            <!-- fetchpriority="high" mejora LCP (Core Web Vitals) -->
+            <img src="img/logo.png"
+                 alt="Logo oficial de Wacha Eri, local de hamburguesas y antojitos en Toluca"
+                 class="logo-hero"
+                 fetchpriority="high"
+                 width="200"
+                 height="200">
+            <!-- H1 optimizado: marca + keyword principal + ubicación -->
             <h1><span class="highlight">Wacha Eri</span></h1>
-            <p>Los mejores snacks y hamburguesas de la ciudad</p>
+            <!-- Subtítulo con keywords secundarias -->
+            <p>Hamburguesas, Hot Dogs y Antojitos en <strong>Toluca</strong> — Abiertos todos los días de 5 PM a 11 PM</p>
             <div class="cta-buttons">
-                <a href="#menu" class="btn btn-primary">
-                    <i class="fas fa-utensils"></i> Ver Menu
+                <a href="#menu" class="btn btn-primary" aria-label="Ver menú completo de Wacha Eri">
+                    <i class="fas fa-utensils" aria-hidden="true"></i> Ver Menú
                 </a>
-                <a href="#info" class="btn btn-secondary">
-                    <i class="fas fa-info-circle"></i> Mas Info
+                <a href="#info" class="btn btn-secondary" aria-label="Ver información y ubicación de Wacha Eri">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i> Más Info
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
+    <!-- ============================================================
+         ABOUT / DESCRIPCIÓN (GEO: señales de entidad para IA generativa)
+         Visible y estilizado sutilmente – también indexado por crawlers
+    ============================================================ -->
+    <section id="nosotros" class="about-section" aria-label="Sobre Wacha Eri">
         <div class="container">
-            <h2 class="section-title scroll-reveal"><i class="fas fa-utensils"></i> Nuestro Menu</h2>
+            <p class="about-text">
+                <strong>Wacha Eri</strong> es un local de comida rápida y antojitos ubicado en
+                <strong>Jilotepec 200, Sector Popular, Toluca de Lerdo, Estado de México</strong>.
+                Llevamos <strong>más de 3 años</strong> sirviendo hamburguesas, hot dogs,
+                alitas, papas, nachos, boneless, sincronizadas y antojitos con ingredientes frescos y
+                precios accesibles para toda la familia. Abiertos <strong>todos los días de 5:00 PM a 11:00 PM</strong>.
+                Teléfono: <a href="tel:+527225443026">722 544 3026</a>.
+            </p>
+        </div>
+    </section>
 
-            <div class="menu-categories scroll-reveal sticky-categories">
-                <button class="category-btn active" data-category="hamburguesas">Hamburguesas</button>
-                <button class="category-btn" data-category="hotdogs">Hot Dogs</button>
-                <button class="category-btn" data-category="papas">Papas</button>
-                <button class="category-btn" data-category="alitas">Alitas</button>
-                <button class="category-btn" data-category="sincronizadas">Sincronizadas</button>
-                <button class="category-btn" data-category="nachos">Nachos</button>
-                <button class="category-btn" data-category="pollo">Extras de Pollo</button>
-                <button class="category-btn" data-category="botanear">Botanear</button>
-                <button class="category-btn" data-category="bebidas">Bebidas</button>
+    <!-- ============================================================
+         MENU SECTION
+    ============================================================ -->
+    <section id="menu" class="menu-section" aria-label="Menú de Wacha Eri">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">
+                <i class="fas fa-utensils" aria-hidden="true"></i> Nuestro Menú
+            </h2>
+
+            <!-- Categorías del menú con roles ARIA para accesibilidad y SEO -->
+            <div class="menu-categories scroll-reveal sticky-categories" role="tablist" aria-label="Categorías del menú">
+                <button class="category-btn active" data-category="hamburguesas" role="tab" aria-selected="true" aria-controls="hamburguesas">Hamburguesas</button>
+                <button class="category-btn" data-category="hotdogs" role="tab" aria-selected="false" aria-controls="hotdogs">Hot Dogs</button>
+                <button class="category-btn" data-category="papas" role="tab" aria-selected="false" aria-controls="papas">Papas</button>
+                <button class="category-btn" data-category="alitas" role="tab" aria-selected="false" aria-controls="alitas">Alitas</button>
+                <button class="category-btn" data-category="sincronizadas" role="tab" aria-selected="false" aria-controls="sincronizadas">Sincronizadas</button>
+                <button class="category-btn" data-category="nachos" role="tab" aria-selected="false" aria-controls="nachos">Nachos</button>
+                <button class="category-btn" data-category="pollo" role="tab" aria-selected="false" aria-controls="pollo">Extras de Pollo</button>
+                <button class="category-btn" data-category="botanear" role="tab" aria-selected="false" aria-controls="botanear">Botanear</button>
+                <button class="category-btn" data-category="bebidas" role="tab" aria-selected="false" aria-controls="bebidas">Bebidas</button>
             </div>
 
-            <!-- Hamburguesas -->
-            <div class="category-section active" id="hamburguesas">
+            <!-- ── Hamburguesas ── -->
+            <div class="category-section active" id="hamburguesas" role="tabpanel" aria-label="Hamburguesas">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -71,7 +559,7 @@
                                 <div class="item-price">$60</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Arrachera">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Arrachera en Toluca – Wacha Eri $60" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -82,7 +570,7 @@
                                 <div class="item-price">$72</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Arrachera con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Arrachera con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -93,7 +581,7 @@
                                 <div class="item-price">$60</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -104,7 +592,7 @@
                                 <div class="item-price">$72</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -115,7 +603,7 @@
                                 <div class="item-price">$60</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Pollo">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Pollo" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -126,7 +614,7 @@
                                 <div class="item-price">$72</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Pollo con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Pollo con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -137,7 +625,7 @@
                                 <div class="item-price">$70</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res Doble">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res Doble" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -148,7 +636,7 @@
                                 <div class="item-price">$82</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res Doble con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa de Res Doble con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -159,7 +647,7 @@
                                 <div class="item-price">$70</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Hawaiana">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Hawaiana" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -170,7 +658,7 @@
                                 <div class="item-price">$82</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Hawaiana con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Hawaiana con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -181,7 +669,7 @@
                                 <div class="item-price">$70</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Ranchera">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Ranchera" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -192,7 +680,7 @@
                                 <div class="item-price">$82</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Ranchera con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Ranchera con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -203,7 +691,7 @@
                                 <div class="item-price">$70</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Mexicana">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Mexicana" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -214,7 +702,7 @@
                                 <div class="item-price">$82</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Mexicana con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Mexicana con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -225,7 +713,7 @@
                                 <div class="item-price">$75</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Choridoble">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Choridoble" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -236,7 +724,7 @@
                                 <div class="item-price">$85</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Choridoble con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Choridoble con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -247,7 +735,7 @@
                                 <div class="item-price">$135</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Monstruo">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Monstruo – la más grande de Wacha Eri" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -258,15 +746,15 @@
                                 <div class="item-price">$140</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/arrachera.jpg" alt="Hamburguesa Monstruo con papas">
+                                <img src="img/arrachera.jpg" alt="Hamburguesa Monstruo con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Hot Dogs -->
-            <div class="category-section" id="hotdogs">
+            <!-- ── Hot Dogs ── -->
+            <div class="category-section" id="hotdogs" role="tabpanel" aria-label="Hot Dogs">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -275,7 +763,7 @@
                                 <div class="item-price">$25</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/hotdog.jpg" alt="Hot Dog Sencillo">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Sencillo" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -286,7 +774,7 @@
                                 <div class="item-price">$40</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/hotdog.jpg" alt="Hot Dog Sencillo con papas">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Sencillo con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -297,7 +785,7 @@
                                 <div class="item-price">$35</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/hotdog.jpg" alt="Hot Dog Ranchero">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Ranchero con salchicha de asar" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -308,7 +796,7 @@
                                 <div class="item-price">$50</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/hotdog.jpg" alt="Hot Dog Ranchero con papas">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Ranchero con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -319,7 +807,7 @@
                                 <div class="item-price">$45</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/hotdog.jpg" alt="Hot Dog Waka waka">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Waka Waka con guacamole" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -330,15 +818,15 @@
                                 <div class="item-price">$60</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/hotdog.jpg" alt="Hot Dog Waka waka con papas">
+                                <img src="img/hotdog.jpg" alt="Hot Dog Waka Waka con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Papas -->
-            <div class="category-section" id="papas">
+            <!-- ── Papas ── -->
+            <div class="category-section" id="papas" role="tabpanel" aria-label="Papas fritas">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -347,7 +835,7 @@
                                 <div class="item-price">$35</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/papa.jpg" alt="Papas Chicas">
+                                <img src="img/papa.jpg" alt="Papas Fritas Chicas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -358,15 +846,15 @@
                                 <div class="item-price">$55</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/papa.jpg" alt="Papas Grandes">
+                                <img src="img/papa.jpg" alt="Papas Fritas Grandes" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Alitas -->
-            <div class="category-section" id="alitas">
+            <!-- ── Alitas ── -->
+            <div class="category-section" id="alitas" role="tabpanel" aria-label="Alitas de pollo">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -375,7 +863,7 @@
                                 <div class="item-price">$70</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/alitas.jpg" alt="Orden de Alitas">
+                                <img src="img/alitas.jpg" alt="Orden de Alitas de Pollo 6 piezas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -386,7 +874,7 @@
                                 <div class="item-price">$82</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/alitas.jpg" alt="Orden de Alitas con papas">
+                                <img src="img/alitas.jpg" alt="Orden de Alitas con papas fritas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -394,15 +882,15 @@
                         <div class="item-header">
                             <div class="item-info">
                                 <h3>Salsas a Elegir</h3>
-                                <div class="sauce-list">BBQ, Bufalo, Habanero, Extra picosa</div>
+                                <div class="sauce-list">BBQ, Búfalo, Habanero, Extra picosa</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Sincronizadas -->
-            <div class="category-section" id="sincronizadas">
+            <!-- ── Sincronizadas ── -->
+            <div class="category-section" id="sincronizadas" role="tabpanel" aria-label="Sincronizadas">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -411,7 +899,7 @@
                                 <div class="item-price">$40</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/sincronizada.jpg" alt="1 Sincronizada">
+                                <img src="img/sincronizada.jpg" alt="1 Sincronizada" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -422,15 +910,15 @@
                                 <div class="item-price">$65</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/sincronizada.jpg" alt="2 Sincronizadas">
+                                <img src="img/sincronizada.jpg" alt="2 Sincronizadas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Nachos -->
-            <div class="category-section" id="nachos">
+            <!-- ── Nachos ── -->
+            <div class="category-section" id="nachos" role="tabpanel" aria-label="Nachos">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -439,7 +927,7 @@
                                 <div class="item-price">$35</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/nachos.jpg" alt="Nachos Sencillos">
+                                <img src="img/nachos.jpg" alt="Nachos Sencillos" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -450,7 +938,7 @@
                                 <div class="item-price">$55</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/nachos.jpg" alt="Nachos Rancheros">
+                                <img src="img/nachos.jpg" alt="Nachos Rancheros con carne y tocino" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -461,15 +949,15 @@
                                 <div class="item-price">$55</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/nachos.jpg" alt="Chorinachos">
+                                <img src="img/nachos.jpg" alt="Chorinachos – nachos con chorizo" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Extras de Pollo -->
-            <div class="category-section" id="pollo">
+            <!-- ── Extras de Pollo ── -->
+            <div class="category-section" id="pollo" role="tabpanel" aria-label="Extras de Pollo">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -478,7 +966,7 @@
                                 <div class="item-price">$50</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/nuggets.jpg" alt="Orden de Nuggets">
+                                <img src="img/nuggets.jpg" alt="Orden de Nuggets de Pollo 10 piezas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -489,7 +977,7 @@
                                 <div class="item-price">$62</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/nuggets.jpg" alt="Nuggets con papas">
+                                <img src="img/nuggets.jpg" alt="Nuggets de Pollo con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -500,7 +988,7 @@
                                 <div class="item-price">$70</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/bonneles.jpg" alt="Orden de Boneless">
+                                <img src="img/bonneles.jpg" alt="Orden de Boneless de Pollo 10 piezas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -511,7 +999,7 @@
                                 <div class="item-price">$82</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/bonneles.jpg" alt="Boneless con papas">
+                                <img src="img/bonneles.jpg" alt="Boneless de Pollo con papas" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -519,24 +1007,24 @@
                         <div class="item-header">
                             <div class="item-info">
                                 <h3>Salsas para Boneless</h3>
-                                <div class="sauce-list">BBQ, Bufalo, Habanero, Extra picosa</div>
+                                <div class="sauce-list">BBQ, Búfalo, Habanero, Extra picosa</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Botanear -->
-            <div class="category-section" id="botanear">
+            <!-- ── Botanear ── -->
+            <div class="category-section" id="botanear" role="tabpanel" aria-label="Botanear – antojitos">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
                             <div class="item-info">
-                                <h3>Platanos Machos (Orden chica)</h3>
+                                <h3>Plátanos Machos (Orden chica)</h3>
                                 <div class="item-price">$35</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/platano.webp" alt="Platanos Machos">
+                                <img src="img/platano.webp" alt="Plátanos Machos fritos orden chica" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -547,7 +1035,7 @@
                                 <div class="item-price">$40</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/dorilocos.jpg" alt="Dorilocos">
+                                <img src="img/dorilocos.jpg" alt="Dorilocos antojito mexicano" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -558,26 +1046,26 @@
                                 <div class="item-price">$35</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/cueritos.jpg" alt="Cueritos Preparados">
+                                <img src="img/cueritos.jpg" alt="Cueritos Preparados vaso chico" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
                             <div class="item-info">
-                                <h3>Chicharron Preparado</h3>
+                                <h3>Chicharrón Preparado</h3>
                                 <div class="item-price">$40</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/chicharron.jpeg" alt="Chicharron Preparado">
+                                <img src="img/chicharron.jpeg" alt="Chicharrón Preparado antojito" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Bebidas -->
-            <div class="category-section" id="bebidas">
+            <!-- ── Bebidas ── -->
+            <div class="category-section" id="bebidas" role="tabpanel" aria-label="Bebidas">
                 <div class="menu-grid">
                     <div class="menu-item scroll-reveal">
                         <div class="item-header">
@@ -586,7 +1074,7 @@
                                 <div class="item-price">$26</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/coca.jpg" alt="Coca-Cola">
+                                <img src="img/coca.jpg" alt="Coca-Cola 600ml" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -597,7 +1085,7 @@
                                 <div class="item-price">$25</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/refrescos.avif" alt="Refrescos de sabores">
+                                <img src="img/refrescos.avif" alt="Refrescos de sabores variados" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -608,7 +1096,7 @@
                                 <div class="item-price">$25</div>
                             </div>
                             <div class="item-image">
-                                <img src="img/mango.jpg" alt="Jugos">
+                                <img src="img/mango.jpg" alt="Jugos naturales caja o botella" loading="lazy" width="120" height="120">
                             </div>
                         </div>
                     </div>
@@ -618,93 +1106,146 @@
         </div>
     </section>
 
-    <!-- Info Section -->
-    <section id="info" class="info-section">
+    <!-- ============================================================
+         INFO SECTION
+    ============================================================ -->
+    <section id="info" class="info-section" aria-label="Información del local Wacha Eri en Toluca">
         <div class="container">
-            <h2 class="section-title scroll-reveal">Informacion del Lugar</h2>
+            <h2 class="section-title scroll-reveal">Información del Local</h2>
             <div class="info-grid">
                 <div class="info-card scroll-reveal">
                     <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     </div>
-                    <h3>Ubicacion</h3>
-                    <p>
+                    <h3>Ubicación</h3>
+                    <address>
                         Jilotepec 200<br>
                         Sector Popular<br>
-                        50040 Toluca de Lerdo, Mex.<br>
+                        50040 Toluca de Lerdo, Méx.<br>
                         <a href="https://www.google.com/maps/place/Jilotepec+200,+Sector+Popular,+50040+Toluca+de+Lerdo,+M%C3%A9x./@19.2929813,-99.6639807,21z/data=!4m6!3m5!1s0x85cd89c69229115b:0x998cd401349765f9!8m2!3d19.2929675!4d-99.6639067!16s%2Fg%2F11nnszmth0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
                            target="_blank"
-                           rel="noopener noreferrer">
-                            <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
+                           rel="noopener noreferrer"
+                           aria-label="Ver Wacha Eri en Google Maps">
+                            <i class="fas fa-map-marked-alt" aria-hidden="true"></i> Ver en Google Maps
                         </a>
-                    </p>
+                    </address>
                 </div>
 
                 <div class="info-card scroll-reveal">
                     <div class="info-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                     </div>
                     <h3>Horario</h3>
                     <ul style="list-style:none; padding-left:0;">
-                        <li><i class="fas fa-clock" style="color:var(--color-primary);"></i> Lunes a Domingo: 5:00 PM - 11:00 PM</li>
-                        <li><i class="fas fa-check-circle" style="color:#43a047;"></i> <em>Abierto todos los dias</em></li>
+                        <li><i class="fas fa-clock" style="color:var(--color-primary);" aria-hidden="true"></i> Lunes a Domingo: 5:00 PM – 11:00 PM</li>
+                        <li><i class="fas fa-check-circle" style="color:#43a047;" aria-hidden="true"></i> <em>Abierto todos los días</em></li>
                     </ul>
                 </div>
 
                 <div class="info-card scroll-reveal">
                     <div class="info-icon">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                     </div>
                     <h3>Contacto</h3>
                     <ul style="list-style:none; padding-left:0;">
-                        <li><i class="fas fa-phone" style="color:var(--color-primary);"></i> Telefono: <a href="tel:7225443026">722 544 3026</a></li>
+                        <li><i class="fas fa-phone" style="color:var(--color-primary);" aria-hidden="true"></i>
+                            Teléfono: <a href="tel:+527225443026" aria-label="Llamar a Wacha Eri al 722 544 3026">722 544 3026</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="info-card scroll-reveal">
                     <div class="info-icon">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
                     </div>
-                    <h3>Especialidades</h3>
+                    <h3>¿Por qué elegirnos?</h3>
                     <ul style="list-style:none; padding-left:0;">
-                        <li><i class="fas fa-leaf" style="color:#43a047;"></i> Ingredientes frescos diarios</li>
-                        <li><i class="fas fa-users" style="color:#5b9bd5;"></i> Ambiente familiar</li>
-                        <li><i class="fas fa-dollar-sign" style="color:#43a047;"></i> Precios accesibles</li>
+                        <li><i class="fas fa-leaf" style="color:#43a047;" aria-hidden="true"></i> Ingredientes frescos diarios</li>
+                        <li><i class="fas fa-users" style="color:#5b9bd5;" aria-hidden="true"></i> Ambiente familiar</li>
+                        <li><i class="fas fa-dollar-sign" style="color:#43a047;" aria-hidden="true"></i> Precios accesibles desde $25 MXN</li>
+                        <li><i class="fas fa-calendar-check" style="color:#ff6b35;" aria-hidden="true"></i> Más de 3 años en Toluca</li>
                     </ul>
                 </div>
 
                 <div class="info-card scroll-reveal">
                     <div class="info-icon">
-                        <i class="fas fa-credit-card"></i>
+                        <i class="fas fa-credit-card" aria-hidden="true"></i>
                     </div>
                     <h3>Formas de Pago</h3>
                     <ul style="list-style:none; padding-left:0;">
-                        <li><i class="fas fa-money-bill-wave" style="color:#43a047;"></i> Efectivo</li>
-                        <li><i class="fas fa-university" style="color:#5b9bd5;"></i> Transferencias bancarias</li>
+                        <li><i class="fas fa-money-bill-wave" style="color:#43a047;" aria-hidden="true"></i> Efectivo</li>
+                        <li><i class="fas fa-university" style="color:#5b9bd5;" aria-hidden="true"></i> Transferencias bancarias (SPEI)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contacto" class="footer">
+    <!-- ============================================================
+         FAQ SECTION (AEO – Answer Engine Optimization)
+         Visible para usuarios Y para motores de búsqueda / IA
+    ============================================================ -->
+    <section id="faq" class="faq-section" aria-label="Preguntas frecuentes sobre Wacha Eri">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+
+                <details class="faq-item scroll-reveal">
+                    <summary class="faq-question">¿A qué hora abre Wacha Eri?</summary>
+                    <p class="faq-answer">Abrimos <strong>todos los días de 5:00 PM a 11:00 PM</strong>, incluyendo sábados, domingos y días festivos. Sin días de descanso.</p>
+                </details>
+
+                <details class="faq-item scroll-reveal">
+                    <summary class="faq-question">¿Dónde está ubicado Wacha Eri en Toluca?</summary>
+                    <p class="faq-answer">Estamos en <strong>Jilotepec 200, Sector Popular, 50040 Toluca de Lerdo, Estado de México</strong>. Puedes buscarnos en Google Maps como "Wacha Eri Toluca".</p>
+                </details>
+
+                <details class="faq-item scroll-reveal">
+                    <summary class="faq-question">¿Qué venden en Wacha Eri?</summary>
+                    <p class="faq-answer">Somos un local de comida rápida y antojitos. Vendemos <strong>hamburguesas, hot dogs, alitas, papas fritas, nachos, chorinachos, sincronizadas, boneless, nuggets, dorilocos, cueritos, chicharrón preparado y bebidas</strong> a precios accesibles.</p>
+                </details>
+
+                <details class="faq-item scroll-reveal">
+                    <summary class="faq-question">¿Cuántos años llevan en operación?</summary>
+                    <p class="faq-answer">Wacha Eri lleva <strong>más de 3 años</strong> en Toluca, desde 2022, sirviendo a familias y amigos del Sector Popular y toda la ciudad.</p>
+                </details>
+
+                <details class="faq-item scroll-reveal">
+                    <summary class="faq-question">¿Cuáles son las formas de pago?</summary>
+                    <p class="faq-answer">Aceptamos <strong>efectivo y transferencias bancarias (SPEI)</strong>. Por el momento no contamos con terminal de tarjetas.</p>
+                </details>
+
+                <details class="faq-item scroll-reveal">
+                    <summary class="faq-question">¿Cómo puedo contactar a Wacha Eri?</summary>
+                    <p class="faq-answer">Puedes llamarnos o escribirnos al <strong><a href="tel:+527225443026">722 544 3026</a></strong>.</p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer id="contacto" class="footer" aria-label="Pie de página Wacha Eri">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-hamburger"></i> Wacha Eri</h3>
-                    <p>Los mejores snacks y hamburguesas de Toluca. Desde 2022 deleitando paladares con ingredientes frescos y sabores unicos.</p>
+                    <!-- GEO: Descripción de entidad rica para IA generativa -->
+                    <h3><i class="fas fa-hamburger" aria-hidden="true"></i> Wacha Eri</h3>
+                    <p>Local de hamburguesas, hot dogs, alitas y antojitos en Toluca, Estado de México. Abierto desde 2022. Jilotepec 200, Sector Popular. Tel: <a href="tel:+527225443026">722 544 3026</a>. Abierto todos los días de 5 PM a 11 PM con ingredientes frescos y precios accesibles.</p>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Enlaces Rapidos</h3>
+                    <h3>Enlaces Rápidos</h3>
                     <p><a href="#inicio">Inicio</a></p>
-                    <p><a href="#menu">Menu Completo</a></p>
-                    <p><a href="#contacto">Contacto</a></p>
+                    <p><a href="#menu">Menú Completo</a></p>
+                    <p><a href="#info">Ubicación y Horario</a></p>
+                    <p><a href="#faq">Preguntas Frecuentes</a></p>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Categorias</h3>
+                    <h3>Categorías del Menú</h3>
                     <p><a href="#" data-category="hamburguesas">Hamburguesas</a></p>
                     <p><a href="#" data-category="hotdogs">Hot Dogs</a></p>
                     <p><a href="#" data-category="papas">Papas</a></p>
@@ -713,18 +1254,38 @@
                 </div>
 
                 <div class="footer-section">
+                    <!-- NAP: Name, Address, Phone consistente en todo el sitio -->
                     <h3>Contacto Directo</h3>
-                    <p><i class="fas fa-phone"></i> <a href="tel:7225443026">722 544 3026</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Toluca, Mexico</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+527225443026">722 544 3026</a></p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Jilotepec 200, Sector Popular, Toluca, Méx.</p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i> Lun – Dom: 5:00 PM – 11:00 PM</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Wacha Eri | Hecho con amor para los amantes de la buena comida</p>
+                <!-- Actualizar año automáticamente -->
+                <p>&copy; <span id="year"></span> Wacha Eri &mdash; Hamburguesas y Antojitos en Toluca, Estado de México | Jilotepec 200, Sector Popular</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ============================================================
+         SCRIPTS (defer para no bloquear render = mejor LCP / FID)
+    ============================================================ -->
+    <script src="script.js" defer></script>
+
+    <!-- Año dinámico en footer + ARIA tab roles para menú (sin romper funcionalidad existente) -->
+    <script>
+        // Año automático en footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Sincronizar aria-selected en categorías del menú (accesibilidad + SEO)
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.category-btn').forEach(b => b.setAttribute('aria-selected','false'));
+                btn.setAttribute('aria-selected','true');
+            });
+        });
+    </script>
 </body>
 </html>

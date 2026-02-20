@@ -1,4 +1,4 @@
-// ===== Selectors globales (declarados una sola vez al inicio) =====
+// ===== Selectors globales =====
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 const navbar = document.querySelector('.navbar');
@@ -14,7 +14,6 @@ if (menuToggle && navLinks) {
         document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close mobile menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
@@ -25,23 +24,28 @@ if (menuToggle && navLinks) {
     });
 }
 
-// ===== Smooth Scrolling & Positions (Optimizado para evitar Reflow) =====
-let cachedNavHeight = navbar ? navbar.offsetHeight : 70;
+// ===== Smooth Scrolling & Positions (Fix definitivo para Reflow) =====
+let cachedNavHeight = 70;
 let cachedSections = [];
 
 function cacheSectionPositions() {
-    if (navbar) cachedNavHeight = navbar.offsetHeight;
-    cachedSections = Array.from(sections).map(section => ({
-        id: section.getAttribute('id'),
-        top: section.offsetTop,
-        bottom: section.offsetTop + section.offsetHeight
-    }));
+    // requestAnimationFrame asegura que la lectura ocurra en el momento óptimo del renderizado
+    requestAnimationFrame(() => {
+        if (navbar) cachedNavHeight = navbar.offsetHeight;
+        cachedSections = Array.from(sections).map(section => ({
+            id: section.getAttribute('id'),
+            top: section.offsetTop,
+            bottom: section.offsetTop + section.offsetHeight
+        }));
+    });
 }
 
-// Ejecutar cálculos solo cuando la página cargó totalmente
+// Ejecutar con un pequeño delay (100ms) tras la carga para que el navegador esté en reposo
 window.addEventListener('load', () => {
-    cacheSectionPositions();
-    updateActiveNav();
+    setTimeout(() => {
+        cacheSectionPositions();
+        updateActiveNav();
+    }, 100);
 });
 
 window.addEventListener('resize', cacheSectionPositions, { passive: true });

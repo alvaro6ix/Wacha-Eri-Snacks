@@ -634,3 +634,67 @@ body {
 address {
     font-style: normal
 }
+
+/* ── Botón flotante WhatsApp ── */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background: #25D366;
+    color: #fff;
+    border-radius: var(--radius-full);
+    padding: .75rem 1.25rem .75rem .875rem;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: .9rem;
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 10px 32px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.3)
+}
+
+.whatsapp-float svg {
+    flex-shrink: 0
+}
+
+.whatsapp-label {
+    white-space: nowrap
+}
+
+@keyframes waPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5)
+    }
+
+    70% {
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0)
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0)
+    }
+}
+
+.whatsapp-float {
+    animation: waPulse 2.5s ease-out 3s 3
+}
+
+@media (max-width: 480px) {
+    .whatsapp-float {
+        padding: .75rem;
+        border-radius: 50%;
+        bottom: 1rem;
+        right: 1rem
+    }
+
+    .whatsapp-label {
+        display: none
+    }
+}

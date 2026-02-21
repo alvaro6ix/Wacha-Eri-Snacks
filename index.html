@@ -8,12 +8,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="google-site-verification" content="9pAvLTHmzHjF5cSrUUIwT_Ym5hixHUMCkJLzG5EZBeQ" />
+    <!-- Favicon – muestra logo Wacha Eri en pestaña y resultados de Google -->
+    <link rel="icon" href="img/logo.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="img/logo.webp">
+    <link rel="shortcut icon" href="img/logo.webp">
     <!-- TITLE: Palabra clave principal + marca + ubicación (55-60 chars) -->
     <title>Wacha Eri – Hamburguesas, Hot Dogs y Antojitos en Toluca</title>
 
     <!-- META DESCRIPTION: 145-155 chars, CTA + palabras clave locales -->
     <meta name="description"
-        content="Wacha Eri, local de hamburguesas, hot dogs, alitas y antojitos en Toluca, Mex. Abierto todos los días de 5 PM a 11 PM. Jilotepec 200, Sector Popular. ¡Más de 3 años deleitando Toluca!">
+        content="Wacha Eri, local de hamburguesas, hot dogs, alitas y antojitos en Toluca, Mex. Abierto todos los días de 5:30 PM a 11 PM. Jilotepec 200, Sector Popular. ¡Más de 3 años deleitando Toluca!">
 
     <!-- CANONICAL: evita contenido duplicado -->
     <link rel="canonical" href="https://wacha-eri.vercel.app/">
@@ -46,7 +50,7 @@
     <meta property="og:site_name" content="Wacha Eri">
     <meta property="og:title" content="Wacha Eri – Hamburguesas, Hot Dogs y Antojitos en Toluca">
     <meta property="og:description"
-        content="El local de snacks más popular del Sector Popular en Toluca. Hamburguesas, hot dogs, alitas, nachos y más. Abierto lunes a domingo de 5 PM a 11 PM.">
+        content="El local de snacks más popular del Sector Popular en Toluca. Hamburguesas, hot dogs, alitas, nachos y más. Abierto lunes a domingo de 5:30 PM a 11 PM. Pedidos WhatsApp: 729 310 5953.">
     <meta property="og:url" content="https://wacha-eri.vercel.app/">
     <meta property="og:image" content="https://wacha-eri.vercel.app/img/logo.webp">
     <meta property="og:image:alt" content="Wacha Eri – Local de hamburguesas y snacks en Toluca">
@@ -58,7 +62,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wacha Eri – Hamburguesas, Hot Dogs y Antojitos en Toluca">
     <meta name="twitter:description"
-        content="Local de snacks y hamburguesas en Toluca. Más de 3 años de sabor. Abierto todos los días de 5 PM a 11 PM.">
+        content="Local de snacks y hamburguesas en Toluca. Más de 3 años de sabor. Abierto todos los días de 5:30 PM a 11 PM. Pedidos al WhatsApp 729 310 5953.">
     <meta name="twitter:image" content="https://wacha-eri.vercel.app/img/logo.webp">
     <meta name="twitter:image:alt" content="Hamburguesas y antojitos Wacha Eri Toluca">
 
@@ -93,15 +97,32 @@
           "@id": "https://wacha-eri.vercel.app/#negocio",
           "name": "Wacha Eri",
           "alternateName": ["Wacha Eri Toluca", "Local Wacha Eri"],
-          "description": "Wacha Eri es un local de comida rápida y antojitos establecido en Toluca de Lerdo, Estado de México, desde 2022. Ofrecemos hamburguesas artesanales, hot dogs, alitas, papas fritas, nachos, sincronizadas, boneless, nuggets, dorilocos, cueritos y bebidas. Atendemos todos los días de 5 PM a 11 PM con ingredientes frescos y precios accesibles.",
+          "description": "Wacha Eri es un local de comida rápida y antojitos establecido en Toluca de Lerdo, Estado de México, desde 2022. Ofrecemos hamburguesas artesanales, hot dogs, alitas, papas fritas, nachos, sincronizadas, boneless, nuggets, dorilocos, cueritos y bebidas. Atendemos todos los días de 5:30 PM a 11:00 PM con ingredientes frescos y precios accesibles. Pagos: efectivo, transferencia bancaria y tarjeta (Mercado Pago, NFC).",
           "url": "https://wacha-eri.vercel.app/",
           "telephone": "+527225443026",
           "foundingDate": "2022",
           "priceRange": "$25-$140 MXN",
           "currenciesAccepted": "MXN",
-          "paymentAccepted": "Cash, Bank Transfer",
+          "paymentAccepted": "Cash, Bank Transfer, Credit Card, Debit Card, NFC",
           "servesCuisine": ["Mexicana", "Americana", "Antojitos", "Comida Rápida"],
           "hasMenu": "https://wacha-eri.vercel.app/#menu",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+527225443026",
+              "contactType": "customer service",
+              "contactOption": "TollFree",
+              "availableLanguage": "Spanish",
+              "description": "Llamadas"
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+5217293105953",
+              "contactType": "sales",
+              "availableLanguage": "Spanish",
+              "description": "WhatsApp para pedidos"
+            }
+          ],
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Jilotepec 200",
@@ -119,7 +140,7 @@
             {
               "@type": "OpeningHoursSpecification",
               "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-              "opens": "17:00",
+              "opens": "17:30",
               "closes": "23:00"
             }
           ],
@@ -308,7 +329,7 @@
               "name": "¿A qué hora abre Wacha Eri en Toluca?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Wacha Eri abre todos los días, de lunes a domingo, de 5:00 PM a 11:00 PM, sin días de descanso."
+                "text": "Wacha Eri abre todos los días, de lunes a domingo, de 5:30 PM a 11:00 PM, sin días de descanso."
               }
             },
             {
@@ -348,7 +369,7 @@
               "name": "¿Cuáles son las formas de pago en Wacha Eri?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Wacha Eri acepta pagos en efectivo y mediante transferencias bancarias (SPEI). No se aceptan tarjetas de crédito ni débito por el momento."
+                "text": "Wacha Eri acepta efectivo, transferencias bancarias (SPEI) y tarjeta de crédito/débito a través de su terminal Mercado Pago. También se admite pago sin contacto (NFC, Apple Pay, Google Pay)."
               }
             },
             {
@@ -356,7 +377,7 @@
               "name": "¿Tiene entrega a domicilio Wacha Eri?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Para consultar disponibilidad de servicio a domicilio, contáctanos al teléfono 722 544 3026. También puedes visitarnos directamente en Jilotepec 200, Sector Popular, Toluca."
+                "text": "Para consultar disponibilidad de servicio a domicilio o hacer pedidos, contáctanos por WhatsApp al 729 310 5953 o por teléfono al 722 544 3026. También puedes visitarnos en Jilotepec 200, Sector Popular, Toluca."
               }
             },
             {
@@ -410,8 +431,8 @@
                 <!-- H1 optimizado: marca + keyword principal + ubicación -->
                 <h1><span class="highlight">Wacha Eri</span></h1>
                 <!-- Subtítulo con keywords secundarias -->
-                <p>Hamburguesas, Hot Dogs y Antojitos en <strong>Toluca</strong> — Abiertos todos los días de 5 PM a 11
-                    PM</p>
+                <p>Hamburguesas, Hot Dogs y Antojitos en <strong>Toluca</strong> — Abiertos todos los días de 5:30 PM a
+                    11 PM</p>
                 <div class="cta-buttons">
                     <a href="#menu" class="btn btn-primary" aria-label="Ver menú completo de Wacha Eri">
                         <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
@@ -442,9 +463,12 @@
                     <strong>Jilotepec 200, Sector Popular, Toluca de Lerdo, Estado de México</strong>.
                     Llevamos <strong>más de 3 años</strong> sirviendo hamburguesas, hot dogs,
                     alitas, papas, nachos, boneless, sincronizadas y antojitos con ingredientes frescos y
-                    precios accesibles para toda la familia. Abiertos <strong>todos los días de 5:00 PM a 11:00
+                    precios accesibles para toda la familia. Abiertos <strong>todos los días de 5:30 PM a 11:00
                         PM</strong>.
                     Teléfono: <a href="tel:+527225443026">722 544 3026</a>.
+                    Pedidos por WhatsApp: <a
+                        href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank"
+                        rel="noopener">729 310 5953</a>.
                 </p>
             </div>
         </section>
@@ -1134,7 +1158,7 @@
                                     <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
                                     <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         fill="none" />
-                                </svg> Lunes a Domingo: 5:00 PM – 11:00 PM</li>
+                                </svg> Lunes a Domingo: 5:30 PM – 11:00 PM</li>
                             <li><svg class="icon" aria-hidden="true" style="color:#43a047" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
                                     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"
@@ -1159,8 +1183,18 @@
                                         d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.01 21 3 13.99 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"
                                         fill="currentColor" />
                                 </svg>
-                                Teléfono: <a href="tel:+527225443026"
+                                Llamadas: <a href="tel:+527225443026"
                                     aria-label="Llamar a Wacha Eri al 722 544 3026">722 544 3026</a>
+                            </li>
+                            <li><svg class="icon" aria-hidden="true" style="color:#25D366" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                                        fill="currentColor" />
+                                </svg>
+                                Pedidos WA: <a
+                                    href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+                                    target="_blank" rel="noopener"
+                                    aria-label="Hacer pedido por WhatsApp al 729 310 5953">729 310 5953</a>
                             </li>
                         </ul>
                     </div>
@@ -1218,6 +1252,16 @@
                                         d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
                                         fill="currentColor" />
                                 </svg> Transferencias bancarias (SPEI)</li>
+                            <li><svg class="icon" aria-hidden="true" style="color:#009ee3" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"
+                                        fill="currentColor" />
+                                </svg> Tarjeta crédito/débito (Mercado Pago)</li>
+                            <li><svg class="icon" aria-hidden="true" style="color:#009ee3" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"
+                                        fill="currentColor" />
+                                </svg> Pago sin contacto (NFC / Apple Pay / Google Pay)</li>
                         </ul>
                     </div>
                 </div>
@@ -1235,7 +1279,7 @@
 
                     <details class="faq-item scroll-reveal">
                         <summary class="faq-question">¿A qué hora abre Wacha Eri?</summary>
-                        <p class="faq-answer">Abrimos <strong>todos los días de 5:00 PM a 11:00 PM</strong>, incluyendo
+                        <p class="faq-answer">Abrimos <strong>todos los días de 5:30 PM a 11:00 PM</strong>, incluyendo
                             sábados, domingos y días festivos. Sin días de descanso.</p>
                     </details>
 
@@ -1262,14 +1306,17 @@
 
                     <details class="faq-item scroll-reveal">
                         <summary class="faq-question">¿Cuáles son las formas de pago?</summary>
-                        <p class="faq-answer">Aceptamos <strong>efectivo y transferencias bancarias (SPEI)</strong>. Por
-                            el momento no contamos con terminal de tarjetas.</p>
+                        <p class="faq-answer">Aceptamos <strong>efectivo, transferencias bancarias (SPEI) y tarjeta de
+                                crédito/débito</strong> a través de nuestra terminal Mercado Pago. También admitimos
+                            pagos sin contacto (NFC, Apple Pay, Google Pay).</p>
                     </details>
 
                     <details class="faq-item scroll-reveal">
                         <summary class="faq-question">¿Cómo puedo contactar a Wacha Eri?</summary>
-                        <p class="faq-answer">Puedes llamarnos o escribirnos al <strong><a href="tel:+527225443026">722
-                                    544 3026</a></strong>.</p>
+                        <p class="faq-answer">Para llamadas: <strong><a href="tel:+527225443026">722 544
+                                    3026</a></strong>. Para pedidos por WhatsApp escríbenos al <strong><a
+                                    href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+                                    target="_blank" rel="noopener">729 310 5953</a></strong>.</p>
                     </details>
 
                 </div>
@@ -1291,8 +1338,10 @@
                                 fill="currentColor" />
                         </svg> Wacha Eri</h3>
                     <p>Local de hamburguesas, hot dogs, alitas y antojitos en Toluca, Estado de México. Abierto desde
-                        2022. Jilotepec 200, Sector Popular. Tel: <a href="tel:+527225443026">722 544 3026</a>. Abierto
-                        todos los días de 5 PM a 11 PM con ingredientes frescos y precios accesibles.</p>
+                        2022. Jilotepec 200, Sector Popular. Tel: <a href="tel:+527225443026">722 544 3026</a> | WA
+                        Pedidos: <a href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+                            target="_blank" rel="noopener">729 310 5953</a>. Abierto
+                        todos los días de 5:30 PM a 11 PM con ingredientes frescos y precios accesibles.</p>
                 </div>
 
                 <div class="footer-section">
@@ -1320,16 +1369,24 @@
                                 d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.01 21 3 13.99 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"
                                 fill="currentColor" />
                         </svg> <a href="tel:+527225443026">722 544 3026</a></p>
+                    <p><svg class="icon" aria-hidden="true" style="color:#25D366" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                                fill="currentColor" />
+                        </svg> <a href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+                            target="_blank" rel="noopener">Pedidos WA: 729 310 5953</a></p>
                     <p><svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                             <path
                                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                                 fill="currentColor" />
-                        </svg> Jilotepec 200, Sector Popular, Toluca, Méx.</p>
+                        </svg> <a href="https://maps.app.goo.gl/r5tV8VXNSUAf6pNo8" target="_blank"
+                            rel="noopener noreferrer" aria-label="Ver Wacha Eri en Google Maps">Jilotepec 200, Sector
+                            Popular, Toluca</a></p>
                     <p><svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
                             <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 fill="none" />
-                        </svg> Lun – Dom: 5:00 PM – 11:00 PM</p>
+                        </svg> Lun – Dom: 5:30 PM – 11:00 PM</p>
                 </div>
             </div>
 
@@ -1340,6 +1397,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botón flotante de WhatsApp para pedidos -->
+    <a href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="whatsapp-float"
+        target="_blank" rel="noopener noreferrer" aria-label="Hacer pedido por WhatsApp al 729 310 5953">
+        <svg viewBox="0 0 24 24" fill="white" width="30" height="30" aria-hidden="true">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span class="whatsapp-label">Pedidos</span>
+    </a>
 
     <!-- ============================================================
          SCRIPTS (defer para no bloquear render = mejor LCP / FID)

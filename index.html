@@ -96,28 +96,27 @@
           "@type": ["FoodEstablishment", "LocalBusiness"],
           "@id": "https://wacha-eri.vercel.app/#negocio",
           "name": "Wacha Eri",
-          "alternateName": ["Wacha Eri Toluca", "Local Wacha Eri"],
-          "description": "Wacha Eri es un local de comida rápida y antojitos establecido en Toluca de Lerdo, Estado de México, desde 2022. Ofrecemos hamburguesas artesanales, hot dogs, alitas, papas fritas, nachos, sincronizadas, boneless, nuggets, dorilocos, cueritos y bebidas. Atendemos todos los días de 5:30 PM a 11:00 PM con ingredientes frescos y precios accesibles. Pagos: efectivo, transferencia bancaria y tarjeta (Mercado Pago, NFC).",
+          "alternateName": ["Wacha Eri Toluca", "Local Wacha Eri", "Hamburguesía Wacha Eri"],
+          "description": "Llevamos más de 3 años en Toluca y la pregunta siempre es la misma: ¿cómo hacen hamburguesas tan buenas a ese precio? La respuesta es simple — ingredientes frescos, porciones sin tacañería y mucho orgullo de local. Nuestra Arrachera, la Ranchera, la Mexicana y la bestia mayor que es la Monstruo hablan solas. También hot dogs rancheros, alitas con salsas que pican de verdad, boneless, nachos, dorilocos y más. Sin cadenas, sin atajos, sin dejarte con hambre.",
           "url": "https://wacha-eri.vercel.app/",
           "telephone": "+527225443026",
-          "foundingDate": "2022",
+          "foundingDate": "2021-11-08",
           "priceRange": "$25-$140 MXN",
           "currenciesAccepted": "MXN",
-          "paymentAccepted": "Cash, Bank Transfer, Credit Card, Debit Card, NFC",
-          "servesCuisine": ["Mexicana", "Americana", "Antojitos", "Comida Rápida"],
+          "paymentAccepted": "Cash, Bank Transfer, Credit Card, Debit Card, NFC, Mastercard, Visa",
+          "servesCuisine": ["Mexicana", "Americana", "Antojitos", "Comida Rápida", "Hamburguesas"],
           "hasMenu": "https://wacha-eri.vercel.app/#menu",
           "contactPoint": [
             {
               "@type": "ContactPoint",
               "telephone": "+527225443026",
               "contactType": "customer service",
-              "contactOption": "TollFree",
               "availableLanguage": "Spanish",
               "description": "Llamadas"
             },
             {
               "@type": "ContactPoint",
-              "telephone": "+5217293105953",
+              "telephone": "+527293105953",
               "contactType": "sales",
               "availableLanguage": "Spanish",
               "description": "WhatsApp para pedidos"
@@ -126,7 +125,7 @@
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Jilotepec 200",
-            "addressLocality": "Sector Popular",
+            "addressLocality": "Toluca de Lerdo",
             "addressRegion": "Estado de México",
             "postalCode": "50040",
             "addressCountry": "MX"
@@ -139,8 +138,14 @@
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
               "opens": "17:30",
+              "closes": "23:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "18:00",
               "closes": "23:00"
             }
           ],
@@ -151,19 +156,25 @@
             "width": 512,
             "height": 512
           },
-          "areaServed": {
-            "@type": "City",
-            "name": "Toluca de Lerdo"
-          },
-          "keywords": "hamburguesas Toluca, hot dogs Toluca, alitas Toluca, antojitos Toluca, snacks económicos Toluca",
-          "sameAs": [],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": "120"
-          }
+          "areaServed": [
+            { "@type": "Place", "name": "Sector Popular, Toluca de Lerdo" },
+            { "@type": "City",  "name": "Toluca de Lerdo" }
+          ],
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Estacionamiento gratuito en la calle", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Ideal para ir con niños", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Amigable con LGBTQ+", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Espacio seguro para personas transgénero", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Se permiten perros afuera", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Tiene sanitarios", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Ofrece consumo en el lugar", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Ofrece comida para llevar", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "No ofrece servicio de entrega a domicilio", "value": false }
+          ],
+          "keywords": "hamburguesas Toluca, hot dogs Toluca, alitas Toluca, antojitos Toluca, snacks económicos Toluca, hamburguesía Sector Popular, hamburguesas baratas Toluca, comida rápida Jilotepec Toluca",
+          "sameAs": [
+            "https://www.facebook.com/p/Wacha-Eri-100070150486810/"
+          ]
         },
 
         /* ── 2. MENÚ PRINCIPAL ─────────────────────────────────── */
@@ -329,7 +340,7 @@
               "name": "¿A qué hora abre Wacha Eri en Toluca?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Wacha Eri abre todos los días, de lunes a domingo, de 5:30 PM a 11:00 PM, sin días de descanso."
+                "text": "Wacha Eri abre lunes a sábado de 5:30 PM a 11:00 PM, y los domingos de 6:00 PM a 11:00 PM, sin días de descanso."
               }
             },
             {
@@ -337,7 +348,7 @@
               "name": "¿Dónde está ubicado Wacha Eri en Toluca?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Wacha Eri se encuentra en Jilotepec 200, Sector Popular, 50040 Toluca de Lerdo, Estado de México. Puedes encontrarnos en Google Maps buscando 'Wacha Eri Toluca' o por la dirección Jilotepec 200."
+                "text": "Wacha Eri se encuentra en Jilotepec 200, colonia Sector Popular, 50040 Toluca de Lerdo, Estado de México, a unos minutos del Estadio Nemesio Diez y cerca de la Av. Independencia. Puedes encontrarnos en Google Maps buscando 'Wacha Eri Toluca' o por la dirección Jilotepec 200."
               }
             },
             {
@@ -361,7 +372,7 @@
               "name": "¿Cuántos años tiene Wacha Eri en Toluca?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Wacha Eri lleva más de 3 años operando en Toluca de Lerdo, Estado de México, desde 2022, sirviendo hamburguesas, hot dogs y antojitos con ingredientes frescos a precios accesibles."
+                "text": "Wacha Eri lleva más de 3 años operando en Toluca de Lerdo, Estado de México, desde noviembre de 2021, sirviendo hamburguesas, hot dogs y antojitos con ingredientes frescos a precios accesibles."
               }
             },
             {
@@ -377,7 +388,7 @@
               "name": "¿Tiene entrega a domicilio Wacha Eri?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Para consultar disponibilidad de servicio a domicilio o hacer pedidos, contáctanos por WhatsApp al 729 310 5953 o por teléfono al 722 544 3026. También puedes visitarnos en Jilotepec 200, Sector Popular, Toluca."
+                "text": "Wacha Eri no ofrece entrega a domicilio. Ofrecemos consumo en el lugar y comida para llevar. Para hacer tu pedido y recogerlo, contáctanos por WhatsApp al 729 310 5953 o por teléfono al 722 544 3026. Visita en Jilotepec 200, Sector Popular, Toluca."
               }
             },
             {
@@ -459,16 +470,20 @@
         <section id="nosotros" class="about-section" aria-label="Sobre Wacha Eri">
             <div class="container">
                 <p class="about-text">
-                    <strong>Wacha Eri</strong> es un local de comida rápida y antojitos ubicado en
-                    <strong>Jilotepec 200, Sector Popular, Toluca de Lerdo, Estado de México</strong>.
-                    Llevamos <strong>más de 3 años</strong> sirviendo hamburguesas, hot dogs,
-                    alitas, papas, nachos, boneless, sincronizadas y antojitos con ingredientes frescos y
-                    precios accesibles para toda la familia. Abiertos <strong>todos los días de 5:30 PM a 11:00
-                        PM</strong>.
+                    <strong>Wacha Eri</strong> es una hamburguesía artesanal ubicada en
+                    <strong>Jilotepec 200, colonia Sector Popular, Toluca de Lerdo, Estado de México</strong> —
+                    a unos minutos del <strong>Estadio Nemesio Diez</strong> y cerca de la
+                    <strong>Av. Independencia</strong>.
+                    Desde noviembre de 2021 servimos hamburguesas, hot dogs, alitas, papas, nachos, boneless,
+                    sincronizadas y antojitos con ingredientes frescos y precios accesibles para toda la familia.
+                    Abiertos <strong>lunes a sábado de 5:30 PM a 11:00 PM</strong> y
+                    <strong>domingos de 6:00 PM a 11:00 PM</strong>.
                     Teléfono: <a href="tel:+527225443026">722 544 3026</a>.
                     Pedidos por WhatsApp: <a
-                        href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank"
+                        href="https://wa.me/527293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank"
                         rel="noopener" style="text-decoration:underline">729 310 5953</a>.
+                    Consumo en el lugar y para llevar. Aceptamos efectivo, tarjeta (Mastercard, Visa) y pagos NFC.
+                    Estacionamiento gratuito en la calle. ¡Amigables con familias, mascotas y la comunidad LGBTQ+!
                 </p>
             </div>
         </section>
@@ -1159,7 +1174,13 @@
                                     <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
                                     <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         fill="none" />
-                                </svg> Lunes a Domingo: 5:30 PM – 11:00 PM</li>
+                                </svg> Lunes a Sábado: 5:30 PM – 11:00 PM</li>
+                            <li><svg class="icon" aria-hidden="true" style="color:var(--color-primary)"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        fill="none" />
+                                </svg> Domingo: 6:00 PM – 11:00 PM</li>
                             <li><svg class="icon" aria-hidden="true" style="color:#43a047" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
                                     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"
@@ -1280,14 +1301,19 @@
 
                     <details class="faq-item scroll-reveal">
                         <summary class="faq-question">¿A qué hora abre Wacha Eri?</summary>
-                        <p class="faq-answer">Abrimos <strong>todos los días de 5:30 PM a 11:00 PM</strong>, incluyendo
-                            sábados, domingos y días festivos. Sin días de descanso.</p>
+                        <p class="faq-answer">Abrimos <strong>lunes a sábado de 5:30 PM a 11:00 PM</strong> y
+                            <strong>domingos de 6:00 PM a 11:00 PM</strong>, incluyendo días festivos. Sin días de
+                            descanso.
+                        </p>
                     </details>
 
                     <details class="faq-item scroll-reveal">
                         <summary class="faq-question">¿Dónde está ubicado Wacha Eri en Toluca?</summary>
-                        <p class="faq-answer">Estamos en <strong>Jilotepec 200, Sector Popular, 50040 Toluca de Lerdo,
-                                Estado de México</strong>. Puedes buscarnos en Google Maps como "Wacha Eri Toluca".</p>
+                        <p class="faq-answer">Estamos en <strong>Jilotepec 200, colonia Sector Popular, 50040 Toluca de
+                                Lerdo,
+                                Estado de México</strong>, a unos minutos del Estadio Nemesio Diez y cerca de la Av.
+                            Independencia.
+                            Puedes buscarnos en Google Maps como &ldquo;Wacha Eri Toluca&rdquo;.</p>
                     </details>
 
                     <details class="faq-item scroll-reveal">
@@ -1301,7 +1327,8 @@
 
                     <details class="faq-item scroll-reveal">
                         <summary class="faq-question">¿Cuántos años llevan en operación?</summary>
-                        <p class="faq-answer">Wacha Eri lleva <strong>más de 3 años</strong> en Toluca, desde 2022,
+                        <p class="faq-answer">Wacha Eri lleva <strong>más de 3 años</strong> en Toluca, desde noviembre
+                            de 2021,
                             sirviendo a familias y amigos del Sector Popular y toda la ciudad.</p>
                     </details>
 
@@ -1316,7 +1343,7 @@
                         <summary class="faq-question">¿Cómo puedo contactar a Wacha Eri?</summary>
                         <p class="faq-answer">Para llamadas: <strong><a href="tel:+527225443026">722 544
                                     3026</a></strong>. Para pedidos por WhatsApp escríbenos al <strong><a
-                                    href="https://wa.me/5217293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+                                    href="https://wa.me/527293105953?text=Hola%2C%20quiero%20hacer%20un%20pedido"
                                     target="_blank" rel="noopener">729 310 5953</a></strong>.</p>
                     </details>
 
